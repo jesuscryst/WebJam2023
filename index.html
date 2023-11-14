@@ -51,12 +51,17 @@
         </div>
         <div class="container">
             <h3>To Do</h3>
-            <input type="checkbox" id="todo" value="sample">
-            <label for="todo">sample</label>
-            <a href="..."><br>+ Add task</a>
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" value="Enter task" aria-label="Checkbox for todo">
+                </div>
+                <input type="text" class="form-control" id="taskname" aria-label="Text input with checkbox">
+                <button class="btn btn-outline-secondary" id="taskbutton" type="button" id="button-addon2" style="height: fit-content;" onclick="disableInput(); changeTaskButton()">+</button>
+            </div>              
+            <a href="...">+ Add task</a>
         </div>
         <div class="container">
-            <h3>Schedule Upcoming Tasks</h3>
+            <h3>Schedule Chores</h3>
             <div class="input-group mb-3">
                 <p class="form-control" aria-describedby="button-addon2">task</p>
                 <button class="btn btn-outline-secondary" type="button" id="button-addon2" style="height: fit-content;">+</button>
