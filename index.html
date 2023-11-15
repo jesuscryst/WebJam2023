@@ -43,6 +43,42 @@
                         <td class="calendargrid"></td>
                         <td class="calendargrid"></td>
                     </tr>
+                    <tr>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                    </tr>
+                    <tr>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                    </tr>
+                    <tr>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                    </tr>
+                    <tr>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                        <td class="calendargrid"></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -51,17 +87,12 @@
         </div>
         <div class="container">
             <h3>To Do</h3>
-            <div class="input-group mb-3">
-                <div class="input-group-text">
-                  <input class="form-check-input mt-0" type="checkbox" value="Enter task" aria-label="Checkbox for todo">
-                </div>
-                <input type="text" class="form-control" id="taskname" aria-label="Text input with checkbox">
-                <button class="btn btn-outline-secondary" id="taskbutton" type="button" id="button-addon2" style="height: fit-content;" onclick="disableInput(); changeTaskButton()">+</button>
-            </div>              
-            <a href="...">+ Add task</a>
+            <div id="todotasks"></div>       
+            <button onclick="addTask()">+ Add task</button>
         </div>
         <div class="container">
             <h3>Schedule Chores</h3>
+            <h6>Weekly Chores (due in 3 days)</h6>
             <div class="input-group mb-3">
                 <p class="form-control" aria-describedby="button-addon2">task</p>
                 <button class="btn btn-outline-secondary" type="button" id="button-addon2" style="height: fit-content;">+</button>
