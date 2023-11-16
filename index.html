@@ -89,8 +89,10 @@
               <div class="col-6 col-md-4">
                     <div class="container">
                         <h3>To Do</h3>
-                        <div id="todotasks"></div>       
-                        <button type="button" class="btn" onclick="addTask()">+ Add task</button>
+                        <div id="todotasks">
+                            <span id="completedtasks"><img src="..." alt="..."></span>
+                        </div>       
+                        <button type="button" class="btn" onclick="addTask(); saveTask()">+ Add task</button>
                     </div>
                     <div class="container">
                         <h3>Schedule Chores</h3>
