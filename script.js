@@ -27,12 +27,10 @@ function saveTask(button) {
 }
 
 function changeTaskButton(button) {
-    var parentSpanID = getParentSpanID(button);
-    var taskbutton = document.getElementById(`${parentSpanID}taskbutton`);
-    if (taskbutton.textContent === "+") {
-        taskbutton.innerHTML = "&#128393;";
+    if (button.textContent === "+") {
+        button.innerHTML = "&#128393;";
     } else {
-        taskbutton.textContent = "+";
+        button.textContent = "+";
     };
 }
 

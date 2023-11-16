@@ -15,10 +15,14 @@ th.weekday {
 td.calendargrid {
     border: 1px solid;
     width: 100px;
-    height: 150px;
+    height: 120px;
     vertical-align: top;
     text-align: left;
     
+}
+
+.calendargrid:hover {
+    background-color: gainsboro;
 }
 
 h1.landingheader {
@@ -26,3 +30,6 @@ h1.landingheader {
     text-align: center;
 }
 
+.highlight {
+    background-color: gainsboro;
+}
