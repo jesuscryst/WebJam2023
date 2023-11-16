@@ -15,6 +15,8 @@ th.weekday {
 td.calendargrid {
     border: 1px solid;
     width: 100px;
-    height: 100px;
+    height: 150px;
+    vertical-align: top;
+    text-align: left;
     
 }

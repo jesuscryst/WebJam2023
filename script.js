@@ -6,6 +6,14 @@ function getParentSpanID(button) {
     return parentSpanID;
 }
 
+function addToDict(button) {
+    var parentSpanID = getParentSpanID(button);
+    var addedtask = document.getElementById(`${parentSpanID}taskname`);
+    todoDict[`${parentSpanID}taskname`] = addedtask.innerHTML;
+    console.log(todoDict);
+}
+
+
 function saveTask(button) {
     var parentSpanID = getParentSpanID(button);
     var taskinput = document.getElementById(`${parentSpanID}taskname`);
@@ -44,6 +52,7 @@ function deleteTask(button) {
         tododiv.innerHTML += emptytask;
         newdiv = document.createElement("div");
         document.div.tododiv.appendChild(newdiv);
+        updateCalendar();
     }
 }
 
@@ -52,6 +61,7 @@ function addTask() {
     if (completedtasks) {
         completedtasks.remove();
     }
+    
     var tododiv = document.getElementById("todotasks");
     var lastTask = tododiv.querySelector('span:last-child');
     if (lastTask) {
@@ -59,6 +69,7 @@ function addTask() {
     } else {
         var lastTaskID = "1";
     };
+
     var newtask =
 
     `<span id="${lastTaskID}">
@@ -67,8 +78,8 @@ function addTask() {
                 <input class="form-check-input mt-0" type="checkbox" value="Enter task" aria-label="Checkbox for todo">
             </div>
             <p class="form-control text-start" id="${lastTaskID}taskname">Enter Task</p>
-            <button class="btn btn-outline-secondary" id="${lastTaskID}taskbutton" type="button" id="button-addon2" style="height: 100%;" onclick="changeTaskButton(this); saveTask(this)">&#128393;</button>
-            <button type="button" class="btn btn-outline-secondary" id="delete" onclick="deleteTask(this)" style="height: 100%;">
+            <button class="btn btn-outline-secondary" id="${lastTaskID}taskbutton" type="button" id="button-addon2" style="height: 100%;" onclick="changeTaskButton(this); saveTask(this); addToDict(this); updateCalendar()">&#128393;</button>
+            <button type="button" class="btn btn-outline-secondary" id="delete" onclick="deleteTask(this); updateCalendar()" style="height: 100%;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
                     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
@@ -81,7 +92,17 @@ function addTask() {
     var newdiv = document.createElement("div");
     newdiv.innerHTML = newtask;
     document.div.tododiv.appendChild(newdiv);
+}
 
-    var addedtask = document.getElementById(`${parentSpanID}taskname`);
-    todoDict[`${parentSpanID}taskname`] = addedtask.innerHTML;
+function updateCalendar() {
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var taskdiv = document.getElementById(`today${day}`);
+    taskdiv.innerHTML = '';
+    for (key in todoDict) {
+        var newtask = document.createElement("p");
+        newtask.classList.add("form-control");
+        newtask.innerHTML = todoDict[key];
+        taskdiv.appendChild(newtask);
+    }
 }
