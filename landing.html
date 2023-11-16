@@ -16,16 +16,15 @@
     </div>    
     </div>
 
-    <div class="container">
-    <div style="background-color:#f8f8f8;">
-        <p text-align: center> username </p>
-        <input type="text" placeholder="enter username">
-        <p text-align: center> password </p>
-        <input type="text" placeholder="enter password">
-
-        <button type="button"> login </button>
-        <a href="...">create account</a>
-    </div>    
-    </div>    
+    <form id="loginForm">
+        <label for="username">Username/Email:</label>
+        <input type="text" id="username" name="username" required>
+    
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    
+        <button type="button" id="login" onclick="submitLogin()">Login</button>
+    </form>
+    <a href="createaccount.html">create account</a>
 </body>
 </html>
