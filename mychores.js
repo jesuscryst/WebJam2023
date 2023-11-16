@@ -12,6 +12,8 @@ let chores = {
     ]
 };
 
+var mychores = {};
+
 document.addEventListener("DOMContentLoaded", function() {
     var choresdiv = document.getElementById("chores");
     
@@ -25,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var task = 
             `<div class="input-group mb-3" id="${key}${i}">
                 <p class="schedule form-control text-start" id="${key}${i}chore" aria-describedby="button-addon2">${chores[key][i]}</p>
-                <button class="schedule btn btn-outline-secondary" type="button" style="height: fit-content;" onclick="scheduleChore(this); changeChoreButton(this)">+</button>
+                <button class="schedule btn btn-outline-secondary" type="button" style="height: fit-content;" onclick="changeChoreButton(this)">+</button>
             </div>`;
             choresdiv.innerHTML += task;
         }
@@ -37,8 +39,17 @@ function handleClick(id) {
     return function(event) {
         if (event.target.classList.contains('schedule', 'btn', 'btn-outline-secondary')) {
             var selectedday = document.getElementById(id);
-            var newchore = scheduleChore(event.target);
-            selectedday.appendChild(newchore);
+            var parentdiv = event.target.closest("div");
+            var pelement = parentdiv.querySelector(`#${parentdiv.id}chore`);
+            if (Object.keys(mychores).includes(id)) {
+                mychores[id].push(pelement.innerHTML);
+                console.log(mychores);
+                scheduleChore(`${id}newdiv`);
+            } else {
+                mychores[id] = [pelement.innerHTML];
+                console.log(mychores);
+                scheduleChore(`${id}newdiv`);
+            }
         }
     }
 }
@@ -49,6 +60,12 @@ function selectDay(id) {
     var selected = selectedday.classList.contains('highlight')? true:false;
     console.log(selected);
 
+    var griddiv = document.getElementById(id);
+    var newdiv = document.createElement("div");
+    newdiv.id = `${id}newdiv`;
+    griddiv.appendChild(newdiv);
+    newdiv.innerHTML = '';
+
     if (selected) {
         document.addEventListener("click", handleClick(id));
     } else {
@@ -57,13 +74,18 @@ function selectDay(id) {
     
 }
 
-function scheduleChore(button) {
-    var parentdiv = button.closest("div");
-    var pelement = parentdiv.querySelector(`#${parentdiv.id}chore`);
-    var newchore = document.createElement("p");
-    newchore.classList.add("form-control");
-    newchore.innerHTML = pelement.innerHTML;
-    return newchore;
+function scheduleChore(id) {
+    var newdiv = document.getElementById(id);
+    newdiv.innerHTML = '';
+    for (key in mychores) {
+        for (element in mychores[key]) {
+            var newchore = document.createElement("p");
+            newchore.classList.add("form-control");
+            newchore.innerHTML = mychores[key][element];
+            newdiv.appendChild(newchore);
+        }
+        
+    }
 }
 
 function changeChoreButton(button) {
