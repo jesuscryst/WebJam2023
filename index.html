@@ -50,7 +50,7 @@
                                 <td class="calendargrid"></td>
                                 <td class="calendargrid"></td>
                                 <td class="calendargrid"></td>
-                                <td class="calendargrid" id="day1">1</td>
+                                <td class="calendargrid" id="day1" onclick="scheduleChore(this.id)">1</td>
                                 <td class="calendargrid" id="day2">2</td>
                                 <td class="calendargrid" id="day3">3</td>
                                 <td class="calendargrid" id="day4">4</td>
@@ -95,7 +95,7 @@
                     </table>
                 </div>
             </div>
-                <div class="col-md-4">
+                <div class="col-md-4" style="max-height: 100%; height: 90vh; overflow-y: scroll;">
                     <div class="container">
                         <h3>To Do</h3>
                         <div id="todotasks">

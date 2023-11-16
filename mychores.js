@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     chores = {
         "Weekly": [
-            "wash clothes and towels", "vaccum carpets", "sweep and mop floors", "clean bathrooms", "organize refrigerator", "wipe kitchen appliances"
+            "wash clothes and towels", "vacuum carpets", "sweep and mop floors", "clean bathrooms", "organize refrigerator", "wipe kitchen appliances"
         ],
     
         "Monthly": [
@@ -34,7 +34,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-function scheduleChore(button) {
+function scheduleChore(id) {
+    var selectedday = document.getElementById(id);
+
+    var taskdiv = document.getElementById(`day${day}`);
+    var newtask = document.createElement("p");
+    newtask.classList.add("form-control");
     
     
 }
