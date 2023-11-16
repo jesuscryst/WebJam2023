@@ -42,9 +42,11 @@ function handleClick(id) {
             var parentdiv = event.target.closest("div");
             var pelement = parentdiv.querySelector(`#${parentdiv.id}chore`);
             if (Object.keys(mychores).includes(id)) {
-                mychores[id].push(pelement.innerHTML);
-                console.log(mychores);
-                scheduleChore(`${id}newdiv`);
+                if (!mychores[id].includes(pelement.innerHTML)) {
+                    mychores[id].push(pelement.innerHTML);
+                    console.log(mychores);
+                    scheduleChore(`${id}newdiv`);
+                }
             } else {
                 mychores[id] = [pelement.innerHTML];
                 console.log(mychores);
