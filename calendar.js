@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var newdiv = document.createElement("div");
     newdiv.classList.add("container-fluid");
     newdiv.id = `today${day}`;
+    newdiv.style.padding = '0px';
     today.appendChild(newdiv);
 });
 

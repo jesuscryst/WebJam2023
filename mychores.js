@@ -35,9 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function scheduleChore(button) {
-    var parentdiv = button.closest('div');
-    var parentdivID = parentdiv.id;
-
+    
     
 }
 
