@@ -41,16 +41,18 @@ function handleClick(id) {
             var selectedday = document.getElementById(id);
             var parentdiv = event.target.closest("div");
             var pelement = parentdiv.querySelector(`#${parentdiv.id}chore`);
-            if (Object.keys(mychores).includes(id)) {
+            if (Object.keys(mychores).includes(id) && (document.getElementById(id).classList.contains("highlight"))) {
                 if (!mychores[id].includes(pelement.innerHTML)) {
                     mychores[id].push(pelement.innerHTML);
                     console.log(mychores);
-                    scheduleChore(`${id}newdiv`);
+                    scheduleChore(`${id}newdiv`, id);
                 }
-            } else {
+            } else if (document.getElementById(id).classList.contains("highlight")) {
                 mychores[id] = [pelement.innerHTML];
                 console.log(mychores);
-                scheduleChore(`${id}newdiv`);
+                scheduleChore(`${id}newdiv`, id);
+            } else {
+                console.log("unselected");
             }
         }
     }
@@ -76,17 +78,14 @@ function selectDay(id) {
     
 }
 
-function scheduleChore(id) {
-    var newdiv = document.getElementById(id);
+function scheduleChore(divid, gridid) {
+    var newdiv = document.getElementById(divid);
     newdiv.innerHTML = '';
-    for (key in mychores) {
-        for (element in mychores[key]) {
-            var newchore = document.createElement("p");
-            newchore.classList.add("form-control");
-            newchore.innerHTML = mychores[key][element];
-            newdiv.appendChild(newchore);
-        }
-        
+    for (element in mychores[gridid]) {
+        var newchore = document.createElement("p");
+        newchore.classList.add("form-control");
+        newchore.innerHTML = mychores[gridid][element];
+        newdiv.appendChild(newchore);
     }
 }
 
