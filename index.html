@@ -15,18 +15,18 @@
     <title>Day Lilies</title>
 </head>
 <body>
-        <div class="containe-xxl align-items-center" style="margin: 0; width: 100%; color: white; background-color: rgb(166, 209, 242)">
+        <div class="containe-xxl align-items-center shadow-sm p-0 mb-0 mt-0" style="margin: 0; width: 100%; color: ghostwhite; background-color: rgb(166, 209, 242);">
             <div class="row" style="width: 100%;">
-                <div class="col-5" style="padding: 0; width: fit-content;">
+                <div class="col-5" style="padding: 0; width: fit-content; padding-left: 20px;">
                     <img src="lily_logo.png" alt="lily_logo.png" width="75px" height="75px">
                 </div>
-                <div class="col-4 text-start" style="margin: 10px; font-family: Kalam; padding-top: 10px; padding-bottom: 0px;">
+                <div class="col-4 text-start m-0" style="margin: 10px; font-family: Kalam; padding: 0; padding-top: 20px;">
                     <h1>Calendar</h1>
                 </div>
-                <div class="col text-end" id="hellouser" style="width: 50%; font-family: Overpass;">
-                    <h5>Hello, User</h5>
+                <div class="col text-end" id="hellouser" style="width: 50%; font-family: Overpass; padding: 0; padding-top: 25px;">
+                    <h5>Hello, petrzot</h5>
                 </div>
-                <div class="col-1">
+                <div class="col-1" style="padding-top: 10px; width: fit-content;">
                     <img src="fake pfp.png" alt="..." style="width: 50px; height: 50px; object-fit: contain;">
                 </div>
             </div>
@@ -36,79 +36,82 @@
         <div class="container-fluid text-center" style="margin: 0; padding-top: 10px; font-family: Overpass;">
             <div class="row">
               <div class="col-md-8">
-                <div class="container" style="width: 100%; float: left; position: relative; left: -10px; padding-top: 10px;">
-                    <div id="calendarheader"></div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="weekday">Sun</th>
-                                <th class="weekday">Mon</th>
-                                <th class="weekday">Tue</th>
-                                <th class="weekday">Wed</th>
-                                <th class="weekday">Thu</th>
-                                <th class="weekday">Fri</th>
-                                <th class="weekday">Sat</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="calendargrid"></td>
-                                <td class="calendargrid"></td>
-                                <td class="calendargrid"></td>
-                                <td class="calendargrid" id="day1" onclick="selectDay(this.id)">1</td>
-                                <td class="calendargrid" id="day2" onclick="selectDay(this.id)">2</td>
-                                <td class="calendargrid" id="day3" onclick="selectDay(this.id)">3</td>
-                                <td class="calendargrid" id="day4" onclick="selectDay(this.id)">4</td>
-                            </tr>
-                            <tr>
-                                <td class="calendargrid" id="day5" onclick="selectDay(this.id)">5</td>
-                                <td class="calendargrid" id="day6" onclick="selectDay(this.id)">6</td>
-                                <td class="calendargrid" id="day7" onclick="selectDay(this.id)">7</td>
-                                <td class="calendargrid" id="day8" onclick="selectDay(this.id)">8</td>
-                                <td class="calendargrid" id="day9" onclick="selectDay(this.id)">9</td>
-                                <td class="calendargrid" id="day10" onclick="selectDay(this.id)">10</td>
-                                <td class="calendargrid" id="day11" onclick="selectDay(this.id)">11</td>
-                            </tr>
-                            <tr>
-                                <td class="calendargrid" id="day12" onclick="selectDay(this.id)">12</td>
-                                <td class="calendargrid" id="day13" onclick="selectDay(this.id)">13</td>
-                                <td class="calendargrid" id="day14" onclick="selectDay(this.id)">14</td>
-                                <td class="calendargrid" id="day15" onclick="selectDay(this.id)">15</td>
-                                <td class="calendargrid" id="day16" onclick="selectDay(this.id)">16</td>
-                                <td class="calendargrid" id="day17" onclick="selectDay(this.id)">17</td>
-                                <td class="calendargrid" id="day18" onclick="selectDay(this.id)">18</td>
-                            </tr>
-                            <tr>
-                                <td class="calendargrid" id="day19" onclick="selectDay(this.id)">19</td>
-                                <td class="calendargrid" id="day20" onclick="selectDay(this.id)">20</td>
-                                <td class="calendargrid" id="day21" onclick="selectDay(this.id)">21</td>
-                                <td class="calendargrid" id="day22" onclick="selectDay(this.id)">22</td>
-                                <td class="calendargrid" id="day23" onclick="selectDay(this.id)">23</td>
-                                <td class="calendargrid" id="day24" onclick="selectDay(this.id)">24</td>
-                                <td class="calendargrid" id="day25" onclick="selectDay(this.id)">25</td>
-                            </tr>
-                            <tr>
-                                <td class="calendargrid" id="day26" onclick="selectDay(this.id)">26</td>
-                                <td class="calendargrid" id="day27" onclick="selectDay(this.id)">27</td>
-                                <td class="calendargrid" id="day28" onclick="selectDay(this.id)">28</td>
-                                <td class="calendargrid" id="day29" onclick="selectDay(this.id)">29</td>
-                                <td class="calendargrid" id="day30" onclick="selectDay(this.id)">30</td>
-                                <td class="calendargrid"></td>
-                                <td class="calendargrid"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <div class="container" style="width: 100%; float: left; position: relative; left: -10px; padding-top: 10px; max-height: 100%; height: 90vh; overflow-y: scroll; direction: rtl;">
+                    <div id="calendarcontent">
+                        <div id="calendarheader"></div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="weekday">Sun</th>
+                                        <th class="weekday">Mon</th>
+                                        <th class="weekday">Tue</th>
+                                        <th class="weekday">Wed</th>
+                                        <th class="weekday">Thu</th>
+                                        <th class="weekday">Fri</th>
+                                        <th class="weekday">Sat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="calendargrid" style="background-color:whitesmoke;"></td>
+                                        <td class="calendargrid" style="background-color: whitesmoke;"></td>
+                                        <td class="calendargrid" style="background-color: whitesmoke;"></td>
+                                        <td class="calendargrid" id="day1" onclick="selectDay(this.id)">1</td>
+                                        <td class="calendargrid" id="day2" onclick="selectDay(this.id)">2</td>
+                                        <td class="calendargrid" id="day3" onclick="selectDay(this.id)">3</td>
+                                        <td class="calendargrid" id="day4" onclick="selectDay(this.id)">4</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="calendargrid" id="day5" onclick="selectDay(this.id)">5</td>
+                                        <td class="calendargrid" id="day6" onclick="selectDay(this.id)">6</td>
+                                        <td class="calendargrid" id="day7" onclick="selectDay(this.id)">7</td>
+                                        <td class="calendargrid" id="day8" onclick="selectDay(this.id)">8</td>
+                                        <td class="calendargrid" id="day9" onclick="selectDay(this.id)">9</td>
+                                        <td class="calendargrid" id="day10" onclick="selectDay(this.id)">10</td>
+                                        <td class="calendargrid" id="day11" onclick="selectDay(this.id)">11</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="calendargrid" id="day12" onclick="selectDay(this.id)">12</td>
+                                        <td class="calendargrid" id="day13" onclick="selectDay(this.id)">13</td>
+                                        <td class="calendargrid" id="day14" onclick="selectDay(this.id)">14</td>
+                                        <td class="calendargrid" id="day15" onclick="selectDay(this.id)">15</td>
+                                        <td class="calendargrid" id="day16" onclick="selectDay(this.id)">16</td>
+                                        <td class="calendargrid" id="day17" onclick="selectDay(this.id)">17</td>
+                                        <td class="calendargrid" id="day18" onclick="selectDay(this.id)">18</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="calendargrid" id="day19" onclick="selectDay(this.id)">19</td>
+                                        <td class="calendargrid" id="day20" onclick="selectDay(this.id)">20</td>
+                                        <td class="calendargrid" id="day21" onclick="selectDay(this.id)">21</td>
+                                        <td class="calendargrid" id="day22" onclick="selectDay(this.id)">22</td>
+                                        <td class="calendargrid" id="day23" onclick="selectDay(this.id)">23</td>
+                                        <td class="calendargrid" id="day24" onclick="selectDay(this.id)">24</td>
+                                        <td class="calendargrid" id="day25" onclick="selectDay(this.id)">25</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="calendargrid" id="day26" onclick="selectDay(this.id)">26</td>
+                                        <td class="calendargrid" id="day27" onclick="selectDay(this.id)">27</td>
+                                        <td class="calendargrid" id="day28" onclick="selectDay(this.id)">28</td>
+                                        <td class="calendargrid" id="day29" onclick="selectDay(this.id)">29</td>
+                                        <td class="calendargrid" id="day30" onclick="selectDay(this.id)">30</td>
+                                        <td class="calendargrid" style="background-color: whitesmoke;"></td>
+                                        <td class="calendargrid" style="background-color: whitesmoke;"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
             </div>
-                <div class="col-md-4" style="max-height: 100%; height: 90vh; overflow-y: scroll;">
-                    <div class="container shadow-sm p-3 mb-2 rounded" style="padding-top: 10px; box-shadow: gainsboro; border: 1px gainsboro solid; border-radius: 20px; background-color:aliceblue; margin-bottom: 0;">
+                <div class="col-md-4" style="max-height: 100%; height: 90vh; overflow-y: scroll; padding-top: 50px;">
+                    <div class="container shadow-sm p-3 mb-2 rounded" style="padding-top: 10px; box-shadow: gainsboro; border: 1px gainsboro solid; border-radius: 20px; background-color:ghostwhite; margin-bottom: 0;">
                         <h3><b>To Do</b></h3>
                         <div id="todotasks">
-                            <span id="completedtasks"><img src="..." alt="..."></span>
+                            <span id="completedtasks" style="font-family: Kalam; padding-bottom: 10px;"><img src="sleepy.png" alt="sleepy.png" width="200px" height="200px"><br>No more tasks for today!</span>
                         </div>     
-                        <button type="button" class="btn" onclick="addTask(); saveTask(this)" style="padding-bottom: 10px;">+ Add task</button>
+                        <button type="button" class="btn" onclick="addTask(); saveTask(this)" style="padding-bottom: 10px; padding-top: 10px;">+ Add task</button>
                     </div>
-                    <div class="container shadow-sm p-3 mb-2 mt-3 rounded" style="padding-top: 10px; box-shadow: gainsboro; border: 1px gainsboro solid; border-radius: 20px; background-color:antiquewhite; margin-bottom: 0;">
+                    <div class="container shadow-sm p-3 mb-2 mt-3 rounded" style="padding-top: 10px; box-shadow: gainsboro; border: 1px gainsboro solid; border-radius: 20px; background-color:aliceblue; margin-bottom: 0;">
                         <h3><b>Chores</b></h3>
                         <div id="chores"></div>
                     </div>

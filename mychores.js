@@ -20,13 +20,14 @@ document.addEventListener("DOMContentLoaded", function() {
     for (key in chores) {
         var newsection = document.createElement("h6");
         newsection.id = key;
+        newsection.style.fontFamily = "Kalam";
         newsection.textContent = key + " Chores";
         choresdiv.appendChild(newsection);
     
         for (let i = 0; i < chores[key].length; i++) {
             var task = 
-            `<div class="input-group mb-3" id="${key}${i}" style="font-family: Overpass;">
-                <p class="schedule form-control text-start" id="${key}${i}chore" aria-describedby="button-addon2">${chores[key][i]}</p>
+            `<div class="input-group align-items-center mb-3" id="${key}${i}" style="font-family: Overpass; background-color:white;">
+                <p class="schedule form-control text-start mb-0" id="${key}${i}chore" aria-describedby="button-addon2">${chores[key][i]}</p>
                 <button class="schedule btn btn-outline-secondary" type="button" id="${key}${i}button" style="height: fit-content;" onclick="changeChoreButton(this)">+</button>
             </div>`;
             choresdiv.innerHTML += task;

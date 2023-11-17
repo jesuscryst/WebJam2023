@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var calendarheaderdiv = document.getElementById("calendarheader");
     var header = document.createElement("h3");
-    header.innerHTML = `${months[month]} ${year}`;
+    header.innerHTML = `<b>${months[month]} ${year}</b>`;
     calendarheaderdiv.appendChild(header);
 
     var today = document.getElementById(`day${day}`);

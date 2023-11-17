@@ -46,7 +46,7 @@ function deleteTask(button) {
     if (tododiv.childElementCount === 0) {
         var tododiv = document.getElementById("todotasks");
         tododiv.innerHTML = '';
-        var emptytask = '<span id="completedtasks"><img src="..." alt="..."></span>';
+        var emptytask = '<span id="completedtasks" style="font-family: Kalam; padding-bottom: 10px;"><img src="sleepy.png" alt="sleepy.png" width="200px" height="200px"><br>No more tasks for today!</span>';
         tododiv.innerHTML += emptytask;
         newdiv = document.createElement("div");
         document.div.tododiv.appendChild(newdiv);
