@@ -13,8 +13,8 @@ table {
 th.weekday {
     border: 2px solid;
     width: 100px;
-    background-color: gainsboro;
-    border-color: rgb(194, 194, 194)
+    background-color: rgb(226, 241, 251);
+    border-color: rgb(154, 185, 212)
 }
 
 #calendarheader {
@@ -36,10 +36,14 @@ td.calendargrid {
 }
 
 .calendargrid:hover {
-    background-color: rgb(250, 247, 195);
+    background-color: rgb(255, 244, 222);
 }
 
+h1.landingheader {
+    width: 100%;
+    font-size: 100px;
+}
 
 .highlight {
-    background-color: rgb(250, 247, 195);
+    background-color: rgb(255, 244, 222);
 }
