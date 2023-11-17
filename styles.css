@@ -36,7 +36,7 @@ td.calendargrid {
 }
 
 .calendargrid:hover {
-    background-color: rgb(250, 247, 195);
+    background-color: rgb(255, 244, 222);
 }
 
 h1.landingheader {
@@ -45,5 +45,5 @@ h1.landingheader {
 }
 
 .highlight {
-    background-color: rgb(250, 247, 195);
+    background-color: rgb(255, 244, 222);
 }
