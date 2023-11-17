@@ -70,11 +70,11 @@ function addTask() {
     var newtask =
 
     `<span id="${lastTaskID}">
-        <div class="input-group mb-3 container" style="height: fit-content;">
-            <div class="input-group-text" style="height: 38px;">
+        <div class="input-group mb-3 container" style="height: fit-content; font-family: Overpass; background-color: white; padding: 0px; margin-bottom: 0px;">
+            <div class="input-group-text" style="height: 38px; margin-bottom: 0px;">
                 <input class="form-check-input mt-0" type="checkbox" value="Enter task" aria-label="Checkbox for todo">
             </div>
-            <p class="form-control text-start" id="${lastTaskID}taskname">Enter Task</p>
+            <p class="form-control text-start" id="${lastTaskID}taskname" style="margin-bottom: 0px;">Enter Task</p>
             <button class="btn btn-outline-secondary" id="${lastTaskID}taskbutton" type="button" id="button-addon2" style="height: 100%;" onclick="changeTaskButton(this); saveTask(this); addToDict(this); updateCalendar()">&#128393;</button>
             <button type="button" class="btn btn-outline-secondary" id="delete" onclick="deleteTask(this)" style="height: 100%;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">

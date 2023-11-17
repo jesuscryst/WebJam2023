@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
         for (let i = 0; i < chores[key].length; i++) {
             var task = 
-            `<div class="input-group mb-3" id="${key}${i}">
+            `<div class="input-group mb-3" id="${key}${i}" style="font-family: Overpass;">
                 <p class="schedule form-control text-start" id="${key}${i}chore" aria-describedby="button-addon2">${chores[key][i]}</p>
                 <button class="schedule btn btn-outline-secondary" type="button" id="${key}${i}button" style="height: fit-content;" onclick="changeChoreButton(this)">+</button>
             </div>`;

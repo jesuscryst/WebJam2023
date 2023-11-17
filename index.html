@@ -15,13 +15,13 @@
     <title>Day Lilies</title>
 </head>
 <body>
-        <div class="containe-xxl align-items-center" style="margin: 0; width: 100%; background-color: rgb(177, 209, 242)">
+        <div class="container-xxl align-items-center" style="margin: 0; width: 100%; background-color: rgb(177, 209, 242);">
             <div class="row" style="width: 100%;">
-                <div class="col-2 text-start" style="margin: 10px; font-family: Kalam; padding-top: 8px;">
-                    <h1>Day Lilies</h1>
+                <div class="col-5" style="padding: 0; width: fit-content;">
+                    <img src="lily_logo.png" alt="lily_logo.png" width="75px" height="75px">
                 </div>
-                <div class="col-4" style="width: 50%;">
-                    <img src="..." alt="...">
+                <div class="col-4 text-start" style="margin: 10px; font-family: Kalam; padding-top: 10px; padding-bottom: 0px;">
+                    <h1>Calendar</h1>
                 </div>
                 <div class="col text-end" id="hellouser" style="width: 50%; font-family: Overpass;">
                     <h5>Hello, User</h5>
@@ -36,7 +36,7 @@
         <div class="container-fluid text-center" style="margin: 0; padding-top: 10px; font-family: Overpass;">
             <div class="row">
               <div class="col-md-8">
-                <div class="container" style="width: 100%; float: left; position: relative; left: -10px">
+                <div class="container" style="width: 100%; float: left; position: relative; left: -10px; padding-top: 10px;">
                     <div id="calendarheader"></div>
                     <table>
                         <thead>
@@ -101,15 +101,15 @@
                 </div>
             </div>
                 <div class="col-md-4" style="max-height: 100%; height: 90vh; overflow-y: scroll;">
-                    <div class="container">
-                        <h3>To Do</h3>
+                    <div class="container shadow-sm p-3 mb-2 rounded" style="padding-top: 10px; box-shadow: gainsboro; border: 1px gainsboro solid; border-radius: 20px; background-color:aliceblue; margin-bottom: 0;">
+                        <h3><b>To Do</b></h3>
                         <div id="todotasks">
                             <span id="completedtasks"><img src="..." alt="..."></span>
                         </div>     
-                        <button type="button" class="btn" onclick="addTask(); saveTask(this)">+ Add task</button>
+                        <button type="button" class="btn" onclick="addTask(); saveTask(this)" style="padding-bottom: 10px;">+ Add task</button>
                     </div>
-                    <div class="container">
-                        <h3><br>Chores</h3>
+                    <div class="container shadow-sm p-3 mb-2 mt-3 rounded" style="padding-top: 10px; box-shadow: gainsboro; border: 1px gainsboro solid; border-radius: 20px; background-color:antiquewhite; margin-bottom: 0;">
+                        <h3><b>Chores</b></h3>
                         <div id="chores"></div>
                     </div>
               </div>
