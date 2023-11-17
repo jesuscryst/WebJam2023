@@ -40,7 +40,8 @@ td.calendargrid {
 }
 
 h1.landingheader {
-    width: 100%
+    width: 100%;
+    font-size: 100px;
 }
 
 .highlight {
