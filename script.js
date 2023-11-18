@@ -72,7 +72,7 @@ function addTask() {
     `<span id="${lastTaskID}">
         <div class="input-group mb-3 container" style="height: fit-content; font-family: Overpass; background-color: white; padding: 0px; margin-bottom: 0px;">
             <div class="input-group-text" style="height: 38px; margin-bottom: 0px;">
-                <input class="form-check-input mt-0" type="checkbox" value="Enter task" aria-label="Checkbox for todo">
+                <input class="form-check-input mt-0" type="checkbox" value="Enter task" aria-label="Checkbox for todo" id="${lastTaskID}checkbox" onclick="checkCheckbox(this)">
             </div>
             <p class="form-control text-start" id="${lastTaskID}taskname" style="margin-bottom: 0px;">Enter Task</p>
             <button class="btn btn-outline-secondary" id="${lastTaskID}taskbutton" type="button" id="button-addon2" style="height: 100%;" onclick="changeTaskButton(this); saveTask(this); addToDict(this); updateCalendar()">&#128393;</button>
@@ -111,4 +111,34 @@ function updateCalendar(day = 0) {
         taskdiv.appendChild(newtask);
     }
     
+}
+
+function checkCheckbox(checkbox) {
+    var parentSpan = checkbox.parentNode.parentNode.parentNode;
+    var parentSpanID = parentSpan.id;
+    var taskname = `${parentSpanID}taskname`;
+    var task = document.getElementById(taskname);
+
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var todayID = `today${day}`;
+
+    var todaygrid = document.getElementById(todayID);
+    var pelements = todaygrid.querySelectorAll("p");
+
+    if (checkbox.checked) {
+        pelements.forEach(function(pelement) {
+            if (pelement.innerHTML === task.innerHTML) {
+                pelement.innerHTML = `<s>${task.innerHTML}</s>`;
+            }
+        });
+        task.innerHTML = `<s>${task.innerHTML}</s>`;
+    } else {
+        pelements.forEach(function(pelement) {
+            if (pelement.innerHTML === task.innerHTML) {
+                pelement.innerHTML = todoDict[taskname];
+            }
+        });
+        task.innerHTML = todoDict[taskname];
+    }
 }
