@@ -135,7 +135,7 @@ function checkCheckbox(checkbox) {
         task.innerHTML = `<s>${task.innerHTML}</s>`;
     } else {
         pelements.forEach(function(pelement) {
-            if ((pelement.innerHTML === task.innerHTML) && (checkbox.checked)) {
+            if ((pelement.innerHTML === task.innerHTML) && (!checkbox.checked)) {
                 pelement.innerHTML = todoDict[taskname];
             }
         });
